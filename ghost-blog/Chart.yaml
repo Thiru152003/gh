@@ -1,0 +1,6 @@
+apiVersion: v2
+name: ghost
+description: Ghost 5.111.0 Helm chart using MySQL database
+type: application
+version: 1.0.0
+appVersion: 5.111.0

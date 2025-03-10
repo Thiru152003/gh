@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ghost-mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ghost-mysql
+  template:
+    metadata:
+      labels:
+        app: ghost-mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0.41
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "rootpassword"
+            - name: MYSQL_DATABASE
+              value: "ghostdb"
+            - name: MYSQL_USER
+              value: "ghost"
+            - name: MYSQL_PASSWORD
+              value: "ghostpassword"
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-pvc

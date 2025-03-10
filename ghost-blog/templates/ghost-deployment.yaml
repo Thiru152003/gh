@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ghost
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ghost
+  template:
+    metadata:
+      labels:
+        app: ghost
+    spec:
+      containers:
+        - name: ghost
+          image: ghost:5.111.0
+          env:
+            - name: database__client
+              value: mysql
+            - name: database__connection__host
+              value: ghost-mysql
+            - name: database__connection__user
+              value: ghost
+            - name: database__connection__password
+              value: ghostpassword
+            - name: database__connection__database
+              value: ghostdb
+          ports:
+            - containerPort: 2368
+          volumeMounts:
+            - name: ghost-storage
+              mountPath: /var/lib/ghost/content
+      volumes:
+        - name: ghost-storage
+          persistentVolumeClaim:
+            claimName: ghost-pvc
