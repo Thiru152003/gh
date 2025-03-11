@@ -8,6 +8,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: "standard"  # Move this to the correct position
+  storageClassName: "gp2"  # Move this to the correct position
   hostPath:
     path: "/data/ghost"
