@@ -4,13 +4,12 @@ metadata:
   name: ghost
   namespace: ghost-blog
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-type: "nlb" # NLB for AWS
-    service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+    service.beta.kubernetes.io/aws-load-balancer-type: "classic"  # Use Classic Load Balancer (ELB)
 spec:
-  type: LoadBalancer # Ensure LoadBalancer type is set
+  type: LoadBalancer  # This ensures AWS creates an ELB
   selector:
     app: ghost
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 2368 # Ghost runs on 2368 inside the container
+      targetPort: 2368  # Ghost runs on port 2368 inside the container
