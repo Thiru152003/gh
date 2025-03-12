@@ -23,3 +23,6 @@ ingress:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod
   tls: true
+
+persistence:
+  storageClass: gp3-csi
