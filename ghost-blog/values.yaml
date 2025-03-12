@@ -1,6 +1,6 @@
 ghost:
   image: ghost:5.111.0
-  storage: 10Gi
+  storage: 20Gi
   host: blog.example.com
   dbUser: ghost
   dbPassword: ghostpassword
@@ -10,7 +10,7 @@ ghost:
 
 mysql:
   image: mysql:8.0.41
-  storage: 10Gi
+  storage: 20Gi
   rootPassword: rootpassword
   database: ghostdb
   user: ghost
