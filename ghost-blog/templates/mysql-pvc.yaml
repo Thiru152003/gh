@@ -8,4 +8,4 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: "standard"  # Correct indentation
+  storageClassName: gp3-csi  # Updated storage class
