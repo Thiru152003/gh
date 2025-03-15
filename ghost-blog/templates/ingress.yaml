@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx 
   tls:
     - hosts:
-        - blog.example.com
+        - blog.cloudmasa.com
       secretName: ghost-tls
   rules:
-    - host: blog.example.com
+    - host: blog.cloudmasa.com
       http:
         paths:
           - path: /
