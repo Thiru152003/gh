@@ -1,7 +1,7 @@
 ghost:
   image: ghost:5.111.0
-  storage: 20Gi
-  host: blog.cloudmasa.com
+  storage: 10Gi
+  host: blog.example.com
   dbUser: ghost
   dbPassword: ghostpassword
   dbName: ghostdb
@@ -10,7 +10,7 @@ ghost:
 
 mysql:
   image: mysql:8.0.41
-  storage: 20Gi
+  storage: 10Gi
   rootPassword: rootpassword
   database: ghostdb
   user: ghost
@@ -18,11 +18,8 @@ mysql:
 
 ingress:
   enabled: true
-  hostname: blog.cloudmasa.com
+  hostname: blog.example.com
   annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod
   tls: true
-
-persistence:
-  storageClass: standard
