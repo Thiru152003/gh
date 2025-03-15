@@ -4,10 +4,9 @@ metadata:
   name: ghost-pv
 spec:
   capacity:
-    storage: 20Gi
+    storage: 10Gi
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard  # Updated storage class
   hostPath:
     path: "/data/ghost"
