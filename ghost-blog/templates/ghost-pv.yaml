@@ -8,6 +8,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: gp3-csi  # Updated storage class
+  storageClassName: standard  # Updated storage class
   hostPath:
     path: "/data/ghost"
