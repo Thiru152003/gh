@@ -18,7 +18,7 @@ mysql:
 
 ingress:
   enabled: true
-  hostname: blog.example.com
+  hostname: blog.cloudmasa.com
   annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod
