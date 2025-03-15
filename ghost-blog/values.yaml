@@ -25,4 +25,4 @@ ingress:
   tls: true
 
 persistence:
-  storageClass: gp3-csi
+  storageClass: standard
