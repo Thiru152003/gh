@@ -1,7 +1,7 @@
 ghost:
   image: ghost:5.111.0
   storage: 20Gi
-  host: blog.example.com
+  host: blog.cloudmasa.com
   dbUser: ghost
   dbPassword: ghostpassword
   dbName: ghostdb
